@@ -1,0 +1,167 @@
+﻿<div class="article_title">
+    <span class="symbol"></span>
+    <h2>活動兌換序號注意事項</h2>
+</div>
+<div class="text_box">
+    <ul>
+        <li>1.本活動僅能一個帳號兌換1組活動序號，一個家庭(IP位址)僅能兌換1組序號，請參考【活動序號申請】說明。</li>
+        <li>2.水貨&大批採購者不適用本活動。</li>
+        <li>3.取得兌換活動序號後，請參考【遊戲兌換流程】說明。</li>
+        <li>4.本活動受理截止日期：2020/03/10。
+        <li>5.活動序號兌換截止時間：2020/06/30。</li>
+        <li>6.購買顯示卡消費者，請洽ASUS、MSI、GIGABYTE、PowerColor相關活動網站兌換</li>
+        </ul>
+</div>
+
+<div class="article_title" style="padding: 3% 10% 0 10%;">
+    <span class="symbol"></span>
+    <h2>活動時間</h2>
+    <div class="event_txt">2019/07/01~2020/03/10(活動序號兌換截止日期2020/06/30)。 </div>
+</div>
+
+<div class="article_title" style="padding: 3% 10% 0 10%;">
+    <span class="symbol"></span>
+    <h2>活動辦法</h2>
+    <div class="event_txt"> 購買指定型號即可獲得XBOX GAME PASS 3個月資格 (戰爭機器5與100多款遊戲)-送完為止。 </div>
+</div>
+
+<div class="article_title">
+    <span class="symbol"></span>
+    <h2>活動CPU型號</h2>
+</div>
+<table class="rwd-table">
+    <tbody>
+        <tr>
+            <td>Ryzen 9 <br>3900X</td>
+            <td>Ryzen 7 <br>3800X</td>
+            <td>Ryzen 7 <br>3700X</td>
+            <td>Ryzen 5 <br>3600X</td>
+            <td>Ryzen 5 <br>3600</td>
+        </tr>
+        <tr>
+            <td>Ryzen 5 <br>3400G</td>
+            <td>Ryzen 7 <br>2700X</td>
+            <td>Ryzen 7 <br>2700</td>
+            <td>Ryzen 5 <br>2600X</td>
+            <td>Ryzen 5 <br>2600</td>
+        </tr>
+        <tr>
+            <td>Ryzen 5 <br>2400G</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="article_title">
+    <span class="symbol"></span>
+    <h2>配合經銷商</h2>
+    <a href="javascript:void(0)" data-toggle="modal" data-target="#partner">詳細請按</a>
+</div>
+
+<div class="article_title">
+    <span class="symbol"></span>
+    <h2>資料填寫</h2>
+</div>
+<form name="applyInfo" ng-submit="applyInfo.$valid && $root.apply()">
+    <div class="text_box section">
+        <div class="text_section">
+            <span>姓名：</span>
+            <input type="text" name="UName" ng-model="request.UName" required />
+        </div>
+        <div class="text_section">
+            <span>連絡電話：</span>
+            <input type="text" name="UPhone" ng-model="request.UPhone" required />
+        </div>
+        <div class="text_section">
+            <span>E-mail：</span>
+            <input type="email" name="UEmail" ng-model="request.UEmail" required />
+        </div>
+        <div class="text_section">
+            <span>發票號碼：</span>
+            <input type="text" name="UInvoice" ng-model="request.UInvoice" placeholder="英文2碼+數字8碼" required />
+        </div>
+        <div class="text_section">
+            <span>CPU序號(套裝機不用) ：</span>
+            <input type="text" name="UCPUSN" ng-model="request.UCPUSN" placeholder="SN後面13碼" />
+        </div>
+        <div class="text_section">
+            <span>CPU型號：</span>
+            <a data-fancybox="cpu" href="~/images/cpu_example.jpg">點擊看範例</a>
+            <select name="UCPUType" ng-model="request.UCPUType">
+                <option value="">選擇型號</option>
+                <option>R9-3900X</option>
+                <option>R7-3800X</option>
+                <option>R7-3700X</option>
+                <option>R5-3600X</option>
+                <option>R5-3600</option>
+                <option>R5-3400G</option>
+                <option>R7-2700X</option>
+                <option>R7-2700</option>
+                <option>R5-2600X</option>
+                <option>R5-2600</option>
+                <option>R5-2400G</option>
+            </select>
+        </div>
+        <div class="text_section">
+            <span>購買店家：</span>
+            <input type="text" name="UBuyStore" ng-model="request.UBuyStore" />
+        </div>
+        <div class="text_section">
+            <span>Seagate SSD全系列：</span>
+            <select name="USeagateType" ng-model="request.USeagate">
+                <option>有購買</option>
+                <option>無購買</option>
+            </select>
+        </div>
+        <div class="text_section">
+            <span>T-Force RGB系列記憶體：</span>
+            <select name="UTForceType" ng-model="request.UTForce">
+                <option>有購買</option>
+                <option>無購買</option>
+            </select>
+        </div>
+        <div class="text_section">
+            <span>CPU盒裝照片上傳：</span>
+            <a data-fancybox="cpu" href="~/images/cpu_example.jpg" title="範例" target="_blank">點擊看範例</a>
+            <label class="btn" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                {{ request.CPUFile.name }}<span ng-show="request.CPUFile === undefined">上傳照片</span>
+                <input name="UCPUPhoto" ng-model="request.CPUFile" type="file" class="hidden" accept="image/*" />
+            </label>
+        </div>
+        <div class="text_section">
+            <span>發票照片上傳：</span>
+            <a data-fancybox="invoice" href="~/images/invoice_example.jpg" title="範例" target="_blank">點擊看範例</a>
+            <label class="btn" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                {{ request.InvoiceFile.name }}<span ng-show="request.InvoiceFile === undefined">上傳照片</span>
+                <input name="UInvoicePhoto" ng-model="request.InvoiceFile" type="file" class="hidden" accept="image/*" />
+            </label>
+        </div>
+        <div class="check_section">
+            <input id="agree" type="checkbox" ng-model="request.agree" required />
+            <label for="agree">我同意以上內容送出</label>
+        </div>
+    </div>
+    <div class="btn_box">
+        <button class="btn">送出</button>
+    </div>
+</form>
+
+<div class="article_title">
+    <span class="symbol"></span>
+    <h2>注意事項</h2>
+</div>
+<ul class="note">
+    <li style="padding: 10px 0; color: #eb6100; font-size: 20px;">*同一申請人僅限申請活動序號一份，每個Ryzen 序號僅限兌換一次，如欲申請第二份以上之活動序號，恕無法受理。申請資料（如申請人、聯絡人、買受人、市內電話、手機、地址等）任一資料於本活動申請兩筆以上，或相同資料之重覆登錄、相同地址不同公司等情形，將視為同一申請人。</li>
+    <li style="color: #eb6100;">1.AMD 活動序號禁止轉賣</li>
+    <li>2.遊戲至AMD 網站申請時，網站會檢查硬體配備，如果非兌換活動CPU，會無法申請遊戲。</li>
+    <li>3.請務必確認申請資料皆符合注意事項所有說明，再進行申請步驟，以免影響您的權益。</li>
+    <li>4.2019/07/01起至本活動網頁註冊個人資料申請活動序號。(最遲需於 2020/03/10 23:00前完成活動註冊)。</li>
+    <li>5.參加本活動時，請上傳產品發票照片及產品序號照片。發票規範請詳注意事項第4點。(發票日期需為2019/07/01 至 2020/03/10)。</li>
+    <li>6.提交申請後，請待審核後取得序號。</li>
+    <li>7.取得兌換活動序號後，請參考【遊戲兌換流程】說明。相關使用規範，請依遊戲官方公告為準。</li>
+    <li>8.活動受理截止日期：2020/03/10。活動序號兌換截止時間：2020/06/30。</li>
+    <li>9.本活動服務信箱：amdevent@saintmen.com。</li>
+</ul>

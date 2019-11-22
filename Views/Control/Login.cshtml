@@ -1,0 +1,45 @@
+﻿@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMD 兌換後臺管理</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/behind")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container body-content">
+        <form method="post" action="~/Control/Login">
+            @Html.AntiForgeryToken()
+            <div class="jumbotron">
+                <h1>登入</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="password" name="Password" class="form-control" placeholder="請輸入密碼" required />                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button class="btn btn-primary btn-lg" role="button">登入</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr />
+        <footer class="text-right">
+            <p>&copy; @DateTime.Now.Year - AMD 兌換後臺管理</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/behind")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

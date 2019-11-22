@@ -1,0 +1,128 @@
+﻿<div class="article_title">
+    <span class="symbol"></span>
+    <h2>輸入資料查詢</h2>
+</div>
+<div class="text_box section">
+    <form name="queryInfo" ng-submit="query()">
+        <div class="text_section">
+            <span>查詢類型：</span>
+            <select ng-model="search.Type">
+                <option value="1">XBox</option>
+                <option value="2">Game Bundle</option>
+            </select>
+        </div>
+        <div class="text_section">
+            <span>姓名：</span>
+            <input type="text" name="UName" ng-model="search.UName" required>
+        </div>
+        <div class="text_section">
+            <span>連絡電話：</span>
+            <input type="text" name="UPhone" ng-model="search.UPhone" required>
+        </div>
+        <div class="text_section">
+            <button class="btn">進度查詢</button>
+        </div>
+        <div class="line"></div>
+    </form>
+</div>
+<div class="article_title">
+    <span class="symbol"></span>
+    <h2>進度顯示</h2>
+</div>
+<ul class="schedule">
+    <li><span ng-class="{ true: 'carried_out', false: 'not_carried_out'}[data === '']"></span><p>尚未申請</p></li>
+    <li><span ng-class="{ true: 'carried_out', false: 'not_carried_out'}[data.CState === 0]"></span><p>審核中</p></li>
+    <li><span ng-class="{ true: 'carried_out', false: 'not_carried_out'}[data.CState === 1]"></span><p>已寄出</p></li>
+    <li>
+        <span ng-class="{ true: 'carried_out', false: 'not_carried_out'}[data.CState === 2]"></span><p>審核未過</p>
+        <input ng-hide="data.CReason === '其他'" type="text" class="input_style" value="{{data.CReason}}" readonly />
+        <input ng-show="data.CReason === '其他'" type="text" class="input_style" value="{{data.CAnotherReason}}" readonly />
+    </li>
+    <li class="clear"></li>
+</ul>
+<br />
+<br />
+<div class="article_title">
+    <span class="symbol"></span>
+    <h2>遊戲兌換步驟</h2>
+</div>
+<div class="time-container">
+    <ul class="time-vertical">
+        <li>
+            <b></b>Step1 <br>
+            請點選本首頁面「活動序號申請」，依照流程兌換活動序號。
+        </li>
+        <li>
+            <b></b>Step2 <br>
+            取得兌換活動序號後，請先至AMD遊戲兌換入口網站<a href="http://www.amdrewards.com">http://www.amdrewards.com</a>。
+        </li>
+        <li>
+            <b></b>Step3 <br>
+            點選 " 獲取獎勵" 並輸入您獲得的序號。 後續請遵照兌換步驟進行兌換。
+        </li>
+        <li>
+            <b></b>Step4 <br>
+            一旦取得您的遊戲序號，請依據網頁指示步驟下載遊戲。
+        </li>
+    </ul>
+</div>
+<div class="text_box orange_txt">
+    <ul>
+        <li>※ 其他詳細請參照AMD網頁指引。若於 AMD 活動頁出現兌換問題，請直接聯繫AMD支援團隊(<a href="https://www.amdrewards.com/support">https://www.amdrewards.com/support</a>)</li>
+        <li>※ 提醒您，活動序號須於2020/06/30之前兌換，否則將失效。</li>
+    </ul>
+</div>
+<div class="article_title">
+    <span class="symbol"></span>
+    <h2>注意事項</h2>
+</div>
+<ul class="note">
+    <li>
+        1.請於申請資料後十個工作天，點選「註冊查詢」確認申請狀況。若有資料不完整或申請資格不符等無法申請之情形，
+        請於活動期間內來電活動專線查詢，逾期恕無法受理，經審核申請資格不符後，恕無法重複提出申請或要求變更申請
+        人資料。
+    </li>
+    <li>
+        2.活動註冊資料需與上傳照片資料一致，所有證明文件（發票照片、外盒序號照片及基本資料）需為同一人所有，資料
+        不符者恕無法受理。
+    </li>
+    <li>
+        3.一旦參加本活動，即表示同意接受本活動辦法之拘束；請於2020年03月10日(含)以前洽詢客服中心(僅限查詢申請狀況，
+        不受理逾期申請)。
+    </li>
+    <li>
+        4.發票注意事項：上傳產品發票照片，發票日期需為指定活動期間且內容需清晰完整。如發票無發票章或模糊無法辨識、
+        水貨或購買品項無載明活動指定機型者（註）、無發票日期、僅附購買證明或收據等情形，恕無法參與此活動。若有退
+        換貨之情形，美商超微半導體股份有限公司台灣分公司(AMD)將保留核發之權利。（註）如品項為電腦週邊耗材或無註
+        記購買機型，需請附上銷貨明細單據。
+    </li>
+    <li>
+        5.同一申請人僅限申請贈品一份，每個機器序號僅限兌換一次，如欲申請第二份以上之贈品，恕無法受理。申請資料
+        （如申請人、聯絡人、買受人、市內電話、手機、地址、發票等）任一資料於本活動申請兩筆以上，或相同資料之重覆
+        登錄、相同地址不同公司等情形，將視為同一申請人。
+    </li>
+    <li>6.水貨&大批採購者不適用本活動。</li>
+    <li>
+        7.請務必提供白天可聯絡手機，以免影響您的權益。若申請資料填寫不正確、不完整、手機無法聯絡，恕不負責。提醒您，
+        若無法正常使用之情形 。
+    </li>
+    <li>
+        8.此活動對象僅限台澎金馬地區最終消費者，任一申請資料（如申請人、聯絡人、市內電話、手機）為經銷商相關資料者，
+        恕無法參與本活動。為維護消費者權益，本活動恕不接受代理申請。申請文件若有造假不實者，AMD有權取消活動參加
+        資格；偽造作假文件者，需自負法律責任。
+    </li>
+    <li>
+        9.活動相關贈品將不列入美商超微半導體股份有限公司台灣分公司(AMD)保固的範圍內；如有另外請依美商超微半導體股份
+        有限公司台灣分公司(AMD)公告為準。
+    </li>
+    <li>
+        10.如有未盡事宜，美商超微半導體股份有限公司台灣分公司(AMD)保留最終核准、變更、修改、取消本活動內容之權利；
+        如活動方式及獎項有所變動，以AMD活動網頁公告為準，不另行通知。AMD將視參加本活動者，均已瞭解並同意遵守活
+        動辦法與注意事項之相關規定。
+    </li>
+    <li>
+        11.服務時間：週一至週五(例假日除外) 09:30-18:30，本活動相關疑問，請於活動結束後一週內洽詢本活動專線（僅限查詢申請
+        狀況，不受理逾期申請）。為維護申請人資料安全性，活動結束逾一個月，所有申請資料恕不再保留亦無法查詢相關申請
+        資料。
+    </li>
+</ul>

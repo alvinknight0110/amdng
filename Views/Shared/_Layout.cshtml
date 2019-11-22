@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html ng-app="amd">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>AMD 兌換活動網站</title>
+    <link rel="shortcut icon" href="https://www.amd.com/themes/custom/amd/favicon.ico" type="image/vnd.microsoft.icon">
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/front")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="wrap">
+        <header id="header-w">
+            <div class="header">
+                <div id="carousel-vision" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="~/images/main_1200x630.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/images/xbox_1200x630.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/images/game-bundle_1200x630.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/images/bonus_1200x630.jpg">
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-vision" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">上一張</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-vision" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">下一張</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div id="container-w">
+            <div class="container-d">
+                <div class="main_content">
+                    <div class="nav-tabs">
+                        <ul class="nav-justified">
+                            <li role="presentation" ng-class="{ 'active': page === 1 }"><a href="/">首頁</a></li>
+                            <li role="presentation" ng-class="{ 'active': page === 2 }"><a href="/#!/xbox">XBox 遊戲兌換</a></li>
+                            <li role="presentation" ng-class="{ 'active': page === 3 }"><a href="/#!/gb">Game Bundle</a></li>
+                            <li role="presentation" ng-class="{ 'active': page === 4 }"><a href="/#!/progress">查詢進度</a></li>
+                        </ul>
+                    </div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="partner" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">配合經銷商</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="rwd-table">
+                        <tbody>
+                            <tr>
+                                <th colspan="5">連鎖通路</th>
+                            </tr>
+
+                            <tr>
+                                <td>原價屋<br>(全省門市)</td>
+                                <td>三井電腦<br>(全省門市)</td>
+                                <td>欣亞數位<br>(全省門市)</td>
+                                <td>順發電腦<br>(全省門市)</td>
+                                <td>虹優科技<br>(全省門市)</td>
+                            </tr>
+                            <tr>
+                                <th colspan="5">北部</th>
+                            </tr>
+
+                            <tr>
+                                <td>健宏電腦</td>
+                                <td>澺狄企業</td>
+                                <td>歆宇科技	</td>
+                                <td>崇時科技</td>
+                                <td>昇鼎科技</td>
+                            </tr>
+                            <tr>
+                                <td>德總電腦</td>
+                                <td>立曜電腦</td>
+                                <td>紐頓電子</td>
+                                <td>廣大數位</td>
+                                <td>易飛資訊</td>
+                            </tr>
+                            <tr>
+                                <td>泓達電腦</td>
+                                <td>崇宏科技</td>
+                                <td>安辰科技</td>
+                                <td>慶聲資訊</td>
+                                <td>台灣奇茂資訊</td>
+                            </tr>
+                            <tr>
+                                <td>霐道電腦</td>
+                                <td>星曜科技</td>
+                                <td>時邁電腦</td>
+                                <td>銘睿科技</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <th colspan="5">中部</th>
+                            </tr>
+
+                            <tr>
+                                <td>駿太科技</td>
+                                <td>凌傑資訊	</td>
+                                <td>宏晉科技</td>
+                                <td>漢碩電腦</td>
+                                <td>仕鉑電腦</td>
+                            </tr>
+                            <tr>
+                                <td>洋基電腦</td>
+                                <td>久昇資訊</td>
+                                <td>麻吉電腦</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <th colspan="5">南部</th>
+                            </tr>
+
+                            <tr>
+                                <td>德源電腦</td>
+                                <td>秉鑫電腦</td>
+                                <td>洋宏資訊</td>
+                                <td>華挺資訊</td>
+                                <td>維碁電腦</td>
+                            </tr>
+                            <tr>
+                                <td>協新科技</td>
+                                <td>星鋐國際</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <th colspan="5">電商網站</th>
+                            </tr>
+
+                            <tr>
+                                <td>PChome 24h	</td>
+                                <td>MoMo</td>
+                                <td>Yahoo!</td>
+                                <td>iPCE</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/front")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

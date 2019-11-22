@@ -1,0 +1,220 @@
+﻿<br />
+<div class="panel panel-primary">
+    <div class="panel-heading">查詢兌換紀錄</div>
+    <div class="panel-body">
+        <form name="queryInfo" ng-submit="query()">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-inline">
+                        <label>查詢類型</label>
+                        <label class="radio-inline">
+                            <input type="radio" name="type" value="1" ng-model="search.Type"> XBox
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="type" value="2" ng-model="search.Type"> Game Bundle
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>姓名</label>
+                        <input type="text" name="UName" ng-model="search.UName" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>連絡電話</label>
+                        <input type="text" name="UPhone" ng-model="search.UPhone" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="text" name="UEmail" ng-model="search.UEmail" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>發票號碼</label>
+                        <input type="text" name="UInvoice" ng-model="search.UInvoice" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>CPU型號</label>
+                        <input type="text" name="UCPUType" ng-model="search.UCPUType" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>購買店家</label>
+                        <input type="text" name="UBuyStore" ng-model="search.UBuyStore" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Seagate 產品型號</label>
+                        <input type="text" name="USeagate" ng-model="search.USeagate" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>T-Force 產品型號</label>
+                        <input type="text" name="UTForce" ng-model="search.UTForce" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>審核狀態</label>
+                        <select name="CState" ng-model="search.CState" class="form-control">
+                            <option value="">全部</option>
+                            <option value="0">審核中</option>
+                            <option value="1">審核通過</option>
+                            <option value="2">審核未通過</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>開始日期區間</label>
+                        <input type="date" name="SDate" ng-model="search.SDate" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>結束日期區間</label>
+                        <input type="date" name="EDate" ng-model="search.EDate" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-info btn-block" type="button" ng-click="export()">
+                        <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                        匯出
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary btn-block">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        查詢
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="table-responsive" ng-show="data.length > 0">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>連絡電話</td>
+                <td>E-mail</td>
+                <td>發票號碼</td>
+                <td>發票照片</td>
+                <td>CPU序號</td>
+                <td>CPU型號</td>
+                <td>CPU照片</td>
+                <td>購買店家</td>
+                <td>Seagate SSD全系列</td>
+                <td>T-Force RGB系列記憶體</td>
+                <td>申請時間</td>
+                <td>審核動作</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in data" ng-class="{ 'pass': item.CState === 1, 'fail': item.CState === 2 }">
+                <td>{{item.UName}}</td>
+                <td>{{item.UPhone}}</td>
+                <td>{{item.UEmail}}</td>
+                <td>{{item.UInvoice}}</td>
+                <td><a data-fancybox="invoice" href="/upload/{{item.UInvoicePhoto}}">照片</a></td>
+                <td>{{item.UCPUSN}}</td>
+                <td>{{item.UCPUType}}</td>
+                <td><a data-fancybox="cpu" href="/upload/{{item.UCPUPhoto}}">照片</a></td>
+                <td>{{item.UBuyStore}}</td>
+                <td>{{item.USeagate}}</td>
+                <td>{{item.UTForce}}</td>
+                <td>{{item.InsertDateTime | jsonDate | date:'yyyy/MM/dd hh:mm'}}</td>
+                <td class="text-center">
+                    <a href="/#" data-toggle="modal" data-target="#verify" ng-click="check(item)">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                    </a>
+                    <a href="/#" hidden>
+                        <span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div id="verify" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">審核</h4>
+            </div>
+            <form name="verifyInfo" ng-submit="verify()">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>審核狀態</label>
+                                <select class="form-control" ng-model="request.CState">
+                                    <option ng-value="0">待審核</option>
+                                    <option ng-value="1">審核通過</option>
+                                    <option ng-value="2">審核失敗</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4" ng-show="request.CState === 2">
+                            <div class="form-group">
+                                <label>未過原因</label>
+                                <select class="form-control" ng-model="request.CReason">
+                                    <option>CPU照片模糊</option>
+                                    <option>發票照片模糊</option>
+                                    <option>發票日期不符</option>
+                                    <option>發票內容不符</option>
+                                    <option>非活動照片產品</option>
+                                    <option>其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4" ng-show="request.CState === 2 && request.CReason === '其他'">
+                            <div class="form-group">
+                                <label>其他</label>
+                                <input type="text" class="form-control" ng-model="request.CAnotherReason" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        關閉
+                    </button>
+                    <button class="btn btn-primary">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        儲存
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
