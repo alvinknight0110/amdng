@@ -57,6 +57,15 @@ namespace AMDng.Controllers
         }
 
         /// <summary>
+        /// 再香一次
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Again()
+        {
+            return PartialView();
+        }
+
+        /// <summary>
         /// 進度與查詢
         /// </summary>
         /// <returns></returns>
@@ -129,6 +138,7 @@ namespace AMDng.Controllers
                     Model.CState = 0;
                     Model.CReason = "其他";
                     Model.InsertDateTime = DateTime.Now;
+                    Model.UInvoice = Model.UInvoice?.ToUpper();
                     string strSQL = "INSERT INTO AMD " +
                          "(UName, UPhone, UEmail, UBuyStore, UInvoice," +
                          " UInvoicePhoto, UCPUSN, UCPUType, UCPUPhoto," +

@@ -1,9 +1,10 @@
-﻿var amd = angular.module('amd', ['ngRoute', 'ngSanitize', 'blockUI']).config(['$routeProvider', '$locationProvider', 'blockUIConfig',
+﻿var amd = angular.module('amd', ['ngRoute', 'ngSanitize', 'ngMessages', 'blockUI']).config(['$routeProvider', '$locationProvider', 'blockUIConfig',
     function ($routeProvider, $locationProvider, blockUIConfig) {
         $routeProvider
             .when("/", { templateUrl: '/Activity/Index', controller: 'main' })
             .when("/xbox", { templateUrl: '/Activity/XBox', controller: 'xbox' })
             .when("/gb", { templateUrl: '/Activity/GB', controller: 'gb' })
+            .when("/again", { templateUrl: '/Activity/Again', controller: 'again' })
             .when("/progress", { templateUrl: '/Activity/Progress', controller: 'progress' });
 
         blockUIConfig.message = 'Loading ...';
@@ -14,6 +15,10 @@ amd.run(['$rootScope', '$http',
     function ($rootScope, $http) {
         $rootScope.request = {};
         $rootScope.apply = function () {
+            if ($rootScope.request.InvoiceFile === undefined) {
+                alert("請上傳發票照片");
+                return false;
+            }
             $http({
                 method: 'POST',
                 url: '/Activity/Apply',
@@ -77,27 +82,34 @@ amd.directive('input', function () {
 
 amd.controller('main', ['$rootScope', '$scope', '$http',
     function ($rootScope, $scope, $http) {
-        $rootScope.page = 1;
+        $rootScope.page = 'main';
     }
 ]);
 
 amd.controller('xbox', ['$rootScope', '$scope', '$http',
     function ($rootScope, $scope, $http) {
-        $rootScope.page = 2;
+        $rootScope.page = 'xbox';
         $rootScope.request = { 'Type': 1, 'USeagate': '無購買', 'UTForce': '無購買' };
     }
 ]);
 
 amd.controller('gb', ['$rootScope', '$scope', '$http',
     function ($rootScope, $scope, $http) {
-        $rootScope.page = 3;
+        $rootScope.page = 'gb';
         $rootScope.request = { 'Type': 2, 'USeagate': '無購買', 'UTForce': '無購買' };
+    }
+]);
+
+amd.controller('again', ['$rootScope', '$scope', '$http',
+    function ($rootScope, $scope, $http) {
+        $rootScope.page = 'again';
+        $rootScope.request = { 'Type': 3, 'USeagate': '無購買', 'UTForce': '無購買' };
     }
 ]);
 
 amd.controller('progress', ['$rootScope', '$scope', '$http',
     function ($rootScope, $scope, $http) {
-        $rootScope.page = 4;
+        $rootScope.page = 'progress';
         $scope.search = { 'Type': '1' };
         $scope.data = null;
         $scope.query = function () {

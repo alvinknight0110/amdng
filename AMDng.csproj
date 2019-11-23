@@ -145,6 +145,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\site.css" />
+    <Content Include="images\again_1200x630.jpg" />
     <Content Include="images\bonus_1200x630.jpg" />
     <Content Include="images\cpu_example.jpg" />
     <Content Include="images\invoice_example.jpg" />
@@ -220,6 +221,7 @@
     <Content Include="Views\Shared\_CLayout.cshtml" />
     <Content Include="Views\Control\Draw.cshtml" />
     <Content Include="Views\Control\Login.cshtml" />
+    <Content Include="Views\Activity\Again.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

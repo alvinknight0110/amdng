@@ -26,6 +26,9 @@
                             <img src="~/images/game-bundle_1200x630.jpg">
                         </div>
                         <div class="item">
+                            <img src="~/images/again_1200x630.jpg">
+                        </div>
+                        <div class="item">
                             <img src="~/images/bonus_1200x630.jpg">
                         </div>
                     </div>
@@ -47,10 +50,11 @@
                 <div class="main_content">
                     <div class="nav-tabs">
                         <ul class="nav-justified">
-                            <li role="presentation" ng-class="{ 'active': page === 1 }"><a href="/">首頁</a></li>
-                            <li role="presentation" ng-class="{ 'active': page === 2 }"><a href="/#!/xbox">XBox 遊戲兌換</a></li>
-                            <li role="presentation" ng-class="{ 'active': page === 3 }"><a href="/#!/gb">Game Bundle</a></li>
-                            <li role="presentation" ng-class="{ 'active': page === 4 }"><a href="/#!/progress">查詢進度</a></li>
+                            <li role="presentation" ng-class="{ 'active': page === 'main' }" data-target="#carousel-vision" data-slide-to="0"><a href="/">首頁</a></li>
+                            <li role="presentation" ng-class="{ 'active': page === 'xbox' }" data-target="#carousel-vision" data-slide-to="1"><a href="/#!/xbox">XBox 遊戲兌換</a></li>
+                            <li role="presentation" ng-class="{ 'active': page === 'gb' }" data-target="#carousel-vision" data-slide-to="2"><a href="/#!/gb">Game Bundle</a></li>
+                            <li role="presentation" ng-class="{ 'active': page === 'again' }" data-target="#carousel-vision" data-slide-to="3"><a href="/#!/again">AMD再香一次</a></li>
+                            <li role="presentation" ng-class="{ 'active': page === 'progress' }" data-target="#carousel-vision" data-slide-to="4"><a href="/#!/progress">查詢進度</a></li>
                         </ul>
                     </div>
                     @RenderBody()

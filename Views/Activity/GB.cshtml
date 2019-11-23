@@ -83,7 +83,10 @@
         </div>
         <div class="text_section">
             <span>發票號碼：</span>
-            <input type="text" name="UInvoice" ng-model="request.UInvoice" placeholder="英文2碼+數字8碼" required />
+            <div ng-messages="applyInfo.UInvoice.$error" style="display:inline; color:crimson;">
+                <span ng-message="pattern">請輸入正確發票格式</span>
+            </div>
+            <input type="text" name="UInvoice" ng-model="request.UInvoice" ng-pattern="'^[a-zA-Z]{2}[0-9]{8}$'" maxlength="10" placeholder="英文2碼+數字8碼" required />
         </div>
         <div class="text_section">
             <span>CPU序號(套裝機不用) ：</span>
