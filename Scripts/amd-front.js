@@ -103,7 +103,7 @@ amd.controller('gb', ['$rootScope', '$scope', '$http',
 amd.controller('again', ['$rootScope', '$scope', '$http',
     function ($rootScope, $scope, $http) {
         $rootScope.page = 'again';
-        $rootScope.request = { 'Type': 3, 'USeagate': '無購買', 'UTForce': '無購買' };
+        $rootScope.request = { 'Type': 3, 'USeagate': 'None', 'UTForce': 'None' };
     }
 ]);
 
