@@ -104,6 +104,7 @@ amd.controller('again', ['$rootScope', '$scope', '$http',
     function ($rootScope, $scope, $http) {
         $rootScope.page = 'again';
         $rootScope.request = { 'Type': 3, 'USeagate': 'None', 'UTForce': 'None' };
+        $('a[title="公告"]').click();
     }
 ]);
 
