@@ -1,11 +1,11 @@
 ﻿var amd = angular.module('amd', ['ngRoute', 'ngSanitize', 'ngMessages', 'blockUI']).config(['$routeProvider', '$locationProvider', 'blockUIConfig',
     function ($routeProvider, $locationProvider, blockUIConfig) {
         $routeProvider
-            .when("/", { templateUrl: '/Activity/Index', controller: 'main' })
+            .when("/", { templateUrl: '/Activity/XBox', controller: 'xbox' })
             .when("/xbox", { templateUrl: '/Activity/XBox', controller: 'xbox' })
             .when("/gb", { templateUrl: '/Activity/GB', controller: 'gb' })
-            .when("/again", { templateUrl: '/Activity/Again', controller: 'again' })
-            .when("/progress", { templateUrl: '/Activity/Progress', controller: 'progress' });
+            .when("/progress", { templateUrl: '/Activity/Progress', controller: 'progress' })
+            .otherwise({ redirectTo: '/' });
 
         blockUIConfig.message = 'Loading ...';
     }

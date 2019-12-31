@@ -33,7 +33,7 @@
 <ul class="schedule">
     <li><span ng-class="{ true: 'carried_out', false: 'not_carried_out'}[data === '']"></span><p>尚未申請</p></li>
     <li><span ng-class="{ true: 'carried_out', false: 'not_carried_out'}[data.CState === 0]"></span><p>審核中</p></li>
-    <li><span ng-class="{ true: 'carried_out', false: 'not_carried_out'}[data.CState === 1]"></span><p>已寄出</p></li>
+    <li><span ng-class="{ true: 'carried_out', false: 'not_carried_out'}[data.CState === 1]"></span><p>審核通過</p></li>
     <li>
         <span ng-class="{ true: 'carried_out', false: 'not_carried_out'}[data.CState === 2]"></span><p>審核未過</p>
         <input ng-hide="data.CReason === '其他'" type="text" class="input_style" value="{{data.CReason}}" readonly />
