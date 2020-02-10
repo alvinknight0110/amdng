@@ -4,6 +4,8 @@
             .when("/", { templateUrl: '/Activity/XBox', controller: 'xbox' })
             .when("/xbox", { templateUrl: '/Activity/XBox', controller: 'xbox' })
             .when("/gb", { templateUrl: '/Activity/GB', controller: 'gb' })
+            .when("/faith", { templateUrl: '/Activity/Faith', controller: 'faith' })
+            .when("/gifts", { templateUrl: '/Activity/Gifts', controller: 'gifts' })
             .when("/progress", { templateUrl: '/Activity/Progress', controller: 'progress' })
             .otherwise({ redirectTo: '/' });
 
@@ -105,6 +107,20 @@ amd.controller('again', ['$rootScope', '$scope', '$http',
         $rootScope.page = 'again';
         $rootScope.request = { 'Type': 3, 'USeagate': 'None', 'UTForce': 'None' };
         $('a[title="公告"]').click();
+    }
+]);
+
+amd.controller('faith', ['$rootScope', '$scope', '$http',
+    function ($rootScope, $scope, $http) {
+        $rootScope.page = 'faith';
+        $rootScope.request = { 'Type': 4, 'USeagate': 'None', 'UTForce': 'None' };
+    }
+]);
+
+amd.controller('gifts', ['$rootScope', '$scope', '$http',
+    function ($rootScope, $scope, $http) {
+        $rootScope.page = 'gifts';
+        $rootScope.request = { 'Type': 5, 'USeagate': 'None', 'UTForce': 'None' };
     }
 ]);
 

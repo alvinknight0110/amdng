@@ -141,6 +141,8 @@
     <Content Include="Content\site.css" />
     <Content Include="images\act1-finish_1200x630.jpg" />
     <Content Include="images\again_1200x630.jpg" />
+    <Content Include="images\AMD-YES-Faith.jpg" />
+    <Content Include="images\AMD-YES-Gifts.jpg" />
     <Content Include="images\bonus_1200x630.jpg" />
     <Content Include="images\cpu_example.jpg" />
     <Content Include="images\invoice_example.jpg" />
@@ -217,6 +219,8 @@
     <Content Include="Views\Control\Draw.cshtml" />
     <Content Include="Views\Control\Login.cshtml" />
     <Content Include="Views\Activity\Again.cshtml" />
+    <Content Include="Views\Activity\Faith.cshtml" />
+    <Content Include="Views\Activity\Gifts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

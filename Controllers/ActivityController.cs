@@ -66,6 +66,24 @@ namespace AMDng.Controllers
         }
 
         /// <summary>
+        /// 開學信仰鼠不盡
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Faith()
+        {
+            return PartialView();
+        }
+
+        /// <summary>
+        /// 開學好禮鼠不盡
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Gifts()
+        {
+            return PartialView();
+        }
+
+        /// <summary>
         /// 進度與查詢
         /// </summary>
         /// <returns></returns>
@@ -140,11 +158,11 @@ namespace AMDng.Controllers
                     Model.InsertDateTime = DateTime.Now;
                     Model.UInvoice = Model.UInvoice?.ToUpper();
                     string strSQL = "INSERT INTO AMD " +
-                         "(UName, UPhone, UEmail, UBuyStore, UInvoice," +
+                         "(UName, UPhone, UEmail, UAddress, UBuyStore, UInvoice," +
                          " UInvoicePhoto, UCPUSN, UCPUType, UCPUPhoto," +
                          " USeagate, UTForce, CState, Type, InsertDateTime)" +
                          " VALUES " +
-                         "(@UName, @UPhone, @UEmail, @UBuyStore, @UInvoice," +
+                         "(@UName, @UPhone, @UEmail, @UAddress, @UBuyStore, @UInvoice," +
                          " @UInvoicePhoto, @UCPUSN, @UCPUType, @UCPUPhoto," +
                          " @USeagate, @UTForce, @CState, @Type, @InsertDateTime)";
 

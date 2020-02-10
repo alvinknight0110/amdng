@@ -1,0 +1,119 @@
+﻿<div class="article_title" style="padding: 3% 10% 0 10%;">
+    <span class="symbol"></span>
+    <h2>活動時間</h2>
+    <div class="event_txt">即日起~2020/03/27</div>
+</div>
+
+<div class="article_title" style="padding: 3% 10% 0 10%;">
+    <span class="symbol"></span>
+    <h2>活動辦法</h2>
+    <div class="event_txt">凡購買AMD CPU指定型號，網站登錄後送 AMD 潮帽、托特包、防水潮背包 數量有限送完為止。</div>
+</div>
+
+<div class="article_title">
+    <span class="symbol"></span>
+    <h2>活動CPU型號</h2>
+    <div class="event_txt">
+        Ryzen 5 3400G/3600/3600X  - AMD 潮帽<br />
+        Ryzen 7 3700X/3800X - AMD 托特包<br />
+        Ryzen 9 3900X/3950X - AMD 防水潮背包 
+    </div>
+</div>
+
+<div class="article_title">
+    <span class="symbol"></span>
+    <h2>配合經銷商</h2>
+    <a href="javascript:void(0)" data-toggle="modal" data-target="#partner">詳細請按</a>
+</div>
+
+<div class="article_title">
+    <span class="symbol"></span>
+    <h2>資料填寫</h2>
+</div>
+<form name="applyInfo" ng-submit="applyInfo.$valid && $root.apply()">
+    <div class="text_box section">
+        <div class="text_section">
+            <span>姓名：</span>
+            <input type="text" name="UName" ng-model="request.UName" required />
+        </div>
+        <div class="text_section">
+            <span>連絡電話：</span>
+            <input type="text" name="UPhone" ng-model="request.UPhone" required />
+        </div>
+        <div class="text_section">
+            <span>地址：</span>
+            <input type="text" name="UAddress" ng-model="request.UAddress" required />
+        </div>
+        <div class="text_section">
+            <span>E-mail：</span>
+            <input type="email" name="UEmail" ng-model="request.UEmail" required />
+        </div>
+        <div class="text_section">
+            <span>發票號碼：</span>
+            <div ng-messages="applyInfo.UInvoice.$error" style="display:inline; color:crimson;">
+                <span ng-message="pattern">請輸入正確發票格式</span>
+            </div>
+            <input type="text" name="UInvoice" ng-model="request.UInvoice" ng-pattern="'^[a-zA-Z]{2}[0-9]{8}$'" maxlength="10" placeholder="英文2碼+數字8碼" required />
+        </div>
+        <div class="text_section">
+            <span>CPU序號(套裝機不用) ：</span>
+            <input type="text" name="UCPUSN" ng-model="request.UCPUSN" placeholder="SN後面13碼" />
+        </div>
+        <div class="text_section">
+            <span>CPU型號：</span>
+            <a data-fancybox="cpu" href="~/images/cpu_example.jpg">點擊看範例</a>
+            <select name="UCPUType" ng-model="request.UCPUType">
+                <option value="">選擇型號</option>
+                <option>Ryzen5-3400G</option>
+                <option>Ryzen5-3600</option>
+                <option>Ryzen5-3600X</option>
+                <option>Ryzen7-3700X</option>
+                <option>Ryzen7-3800X</option>
+                <option>Ryzen9-3900X</option>
+                <option>Ryzen9-3950X</option>
+            </select>
+        </div>
+        <div class="text_section">
+            <span>購買店家：</span>
+            <input type="text" name="UBuyStore" ng-model="request.UBuyStore" />
+        </div>
+        <div class="text_section">
+            <span>CPU盒裝照片上傳：</span>
+            <a data-fancybox="cpu" href="~/images/cpu_example.jpg" title="範例" target="_blank">點擊看範例</a>
+            <label class="btn" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                {{ request.CPUFile.name }}<span ng-show="request.CPUFile === undefined">上傳照片</span>
+                <input name="UCPUPhoto" ng-model="request.CPUFile" type="file" class="hidden" accept="image/*" />
+            </label>
+        </div>
+        <div class="text_section">
+            <span>發票照片上傳：</span>
+            <a data-fancybox="invoice" href="~/images/invoice_example.jpg" title="範例" target="_blank">點擊看範例</a>
+            <label class="btn" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
+                {{ request.InvoiceFile.name }}<span ng-show="request.InvoiceFile === undefined">上傳照片</span>
+                <input name="UInvoicePhoto" ng-model="request.InvoiceFile" type="file" class="hidden" accept="image/*" />
+            </label>
+        </div>
+        <div class="check_section">
+            <input id="agree" type="checkbox" ng-model="request.agree" required />
+            <label for="agree">我同意以上內容送出</label>
+        </div>
+    </div>
+    <div class="btn_box">
+        <button class="btn">送出</button>
+    </div>
+</form>
+
+<div class="article_title">
+    <span class="symbol"></span>
+    <h2>注意事項</h2>
+</div>
+<ul class="note">
+    <li>1.同一申請人僅限申請一份，如欲申請第二份以上之活動贈品，恕無法受理。申請資料（如申請人、聯絡人、買受人、市內電話、手機、地址等）任一資料於本活動申請兩筆以上，或相同資料之重覆登錄、相同地址不同公司等情形，將視為同一申請人。憑一張發票僅兌換一項贈品。</li>
+    <li>2.憑一張發票僅兌換一項贈品。</li>
+    <li>3.水貨 & 大批採購者不適用本活動。</li>
+    <li>4.請務必確認申請資料皆符合注意事項所有說明，再進行申請步驟，以免影響您的權益。</li>
+    <li>5.2020/2/1起至本活動網頁註冊個人資料申請。(最遲需於 2020/3/27 23:00前完成活動註冊)。</li>
+    <li>6.參加本活動時，請上傳產品發票照片及產品序號照片。發票規範請詳注意事項第3點。(發票日期需為2020/2/1 至 2020/3/27)。</li>
+    <li>7.活動受理截止日期：2020/3/31。</li>
+    <li>8.本活動服務信箱：amdevent@saintmen.com。</li>
+</ul>

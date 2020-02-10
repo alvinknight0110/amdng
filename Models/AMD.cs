@@ -68,6 +68,11 @@ namespace AMDng.Models
         public string UTForce { get; set; }
 
         /// <summary>
+        /// 地址
+        /// </summary>
+        public string UAddress { get; set; }
+
+        /// <summary>
         /// 處理狀態
         /// 0: 審核中, 1: 審核通過, 2: 審核未過
         /// </summary>
@@ -84,7 +89,7 @@ namespace AMDng.Models
         public string CAnotherReason { get; set; }
 
         /// <summary>
-        /// 1: XBox, 2: Game Bundle
+        /// 1: XBox, 2: Game Bundle, 3: 再香一次, 4: 開學信仰鼠不盡, 5: 開學好禮鼠不盡
         /// </summary>
         public byte Type { get; set; }
 
