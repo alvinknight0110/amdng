@@ -132,6 +132,7 @@
             <tr>
                 <td>姓名</td>
                 <td>連絡電話</td>
+                <td>地址</td>
                 <td>E-mail</td>
                 <td>發票號碼</td>
                 <td>發票照片</td>
@@ -149,6 +150,7 @@
             <tr ng-repeat="item in data" ng-class="{ 'pass': item.CState === 1, 'fail': item.CState === 2 }">
                 <td>{{item.UName}}</td>
                 <td>{{item.UPhone}}</td>
+                <td>{{item.UAddress}}</td>
                 <td>{{item.UEmail}}</td>
                 <td>{{item.UInvoice}}</td>
                 <td><a data-fancybox="invoice" href="/upload/{{item.UInvoicePhoto}}">照片</a></td>
