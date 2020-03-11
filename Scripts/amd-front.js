@@ -1,7 +1,7 @@
 ﻿var amd = angular.module('amd', ['ngRoute', 'ngSanitize', 'ngMessages', 'blockUI']).config(['$routeProvider', '$locationProvider', 'blockUIConfig',
     function ($routeProvider, $locationProvider, blockUIConfig) {
         $routeProvider
-            .when("/", { templateUrl: '/Activity/XBox', controller: 'xbox' })
+            .when("/", { templateUrl: '/Activity/Faith', controller: 'faith' })
             .when("/xbox", { templateUrl: '/Activity/XBox', controller: 'xbox' })
             .when("/gb", { templateUrl: '/Activity/GB', controller: 'gb' })
             .when("/faith", { templateUrl: '/Activity/Faith', controller: 'faith' })
