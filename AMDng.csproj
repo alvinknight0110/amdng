@@ -143,13 +143,18 @@
     <Content Include="images\again_1200x630.jpg" />
     <Content Include="images\AMD-YES-Faith.jpg" />
     <Content Include="images\AMD-YES-Gifts.jpg" />
+    <Content Include="images\B550_Banner.jpg" />
+    <Content Include="images\B550_Banner_small.jpg" />
     <Content Include="images\bonus_1200x630.jpg" />
     <Content Include="images\cpu_example.jpg" />
     <Content Include="images\invoice_example.jpg" />
     <Content Include="images\game-bundle_1200x630.jpg" />
+    <Content Include="images\logo_aorus.png" />
+    <Content Include="images\logo_asrock.png" />
     <Content Include="images\logo_asus.png" />
     <Content Include="images\logo_gigabyte.png" />
     <Content Include="images\logo_msi.png" />
+    <Content Include="images\logo_rog.png" />
     <Content Include="images\logo_seagate.png" />
     <Content Include="images\logo_tforce.png" />
     <Content Include="images\main_1200x630.jpg" />
@@ -221,6 +226,7 @@
     <Content Include="Views\Activity\Again.cshtml" />
     <Content Include="Views\Activity\Faith.cshtml" />
     <Content Include="Views\Activity\Gifts.cshtml" />
+    <Content Include="Views\Activity\B550.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

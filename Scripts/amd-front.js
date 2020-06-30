@@ -1,11 +1,12 @@
 ﻿var amd = angular.module('amd', ['ngRoute', 'ngSanitize', 'ngMessages', 'blockUI']).config(['$routeProvider', '$locationProvider', 'blockUIConfig',
     function ($routeProvider, $locationProvider, blockUIConfig) {
         $routeProvider
-            .when("/", { templateUrl: '/Activity/Faith', controller: 'faith' })
+            .when("/", { templateUrl: '/Activity/B550', controller: 'b550' })
             .when("/xbox", { templateUrl: '/Activity/XBox', controller: 'xbox' })
             .when("/gb", { templateUrl: '/Activity/GB', controller: 'gb' })
             .when("/faith", { templateUrl: '/Activity/Faith', controller: 'faith' })
             .when("/gifts", { templateUrl: '/Activity/Gifts', controller: 'gifts' })
+            .when("/b550", { templateUrl: '/Activity/B550', controller: 'b550' })
             .when("/progress", { templateUrl: '/Activity/Progress', controller: 'progress' })
             .otherwise({ redirectTo: '/' });
 
@@ -113,7 +114,7 @@ amd.controller('again', ['$rootScope', '$scope', '$http',
 amd.controller('faith', ['$rootScope', '$scope', '$http',
     function ($rootScope, $scope, $http) {
         $rootScope.page = 'faith';
-        $rootScope.request = { 'Type': 4, 'USeagate': 'None', 'UTForce': 'None' };
+        $rootScope.request = { 'Type': 6, 'USeagate': 'None', 'UTForce': 'None' };
     }
 ]);
 
@@ -124,10 +125,17 @@ amd.controller('gifts', ['$rootScope', '$scope', '$http',
     }
 ]);
 
+amd.controller('b550', ['$rootScope', '$scope', '$http',
+    function ($rootScope, $scope, $http) {
+        $rootScope.page = 'b550';
+        $rootScope.request = { 'Type': 7, 'USeagate': 'None', 'UTForce': 'None' };
+    }
+]);
+
 amd.controller('progress', ['$rootScope', '$scope', '$http',
     function ($rootScope, $scope, $http) {
         $rootScope.page = 'progress';
-        $scope.search = { 'Type': '1' };
+        $scope.search = { 'Type': '6' };
         $scope.data = null;
         $scope.query = function () {
             $http.get('/Activity/Query', { params: $scope.search }).then(function (result) {

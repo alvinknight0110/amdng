@@ -84,6 +84,12 @@ namespace AMDng.Controllers
         }
 
         /// <summary>
+        /// AMD B550
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult B550() => PartialView();
+
+        /// <summary>
         /// 進度與查詢
         /// </summary>
         /// <returns></returns>

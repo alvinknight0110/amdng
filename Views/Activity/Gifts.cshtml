@@ -1,7 +1,46 @@
 ﻿<div class="article_title" style="padding: 3% 10% 0 10%;">
     <span class="symbol"></span>
-    <h2>活動時間</h2>
-    <div class="event_txt">即日起~2020/03/27</div>
+    <h2>得獎名單</h2>
+    <div class="event_txt">
+恭喜以下幸運兒!!!!AMD客服將會與您聯繫<br />
+<br />
+AMD RYZEN Threadripper 3990X<br />
+宋O娥      陳O珍<br />
+王O定      黃O穎<br />
+勞O毅<br />
+<br />
+AMD X570 MB <br />
+夏O榮      鄧O婷<br />
+郭O斌      黃O育<br />
+林O玉      李O希<br />
+胡O婷      胡O彥<br />
+林O山      李O君<br />
+<br />
+記憶體 <br />  
+蔡O均      劉O如 <br />
+謝O慧      楊O琪 <br />
+楊O苓 <br />
+<br />
+固態硬碟<br />
+楊O裕      李O軒<br />
+鐘O茵      盧O豪<br />
+吳O竹      <br />
+<br />
+CPU散熱器 <br />
+杜O婷      駱O鈴<br />
+王O雯      蔡O傑<br />
+陳O琇      趙O秋<br />
+張O臻      周O廷<br />
+葉O玲      孫O雅<br />
+<br />
+機殼   <br />
+賴O雯      吳O誠<br />
+賴O雯      韓O怡<br />
+熊O琪      龐O汝<br />
+袁O劭      賴O甄<br />
+蘇O芬      周O儀<br />
+<br />
+</div>
 </div>
 
 <div class="article_title" style="padding: 3% 10% 0 10%;">
@@ -41,82 +80,6 @@
     <a href="javascript:void(0)" data-toggle="modal" data-target="#partner">詳細請按</a>
 </div>
 
-<div class="article_title">
-    <span class="symbol"></span>
-    <h2>資料填寫</h2>
-</div>
-<form name="applyInfo" ng-submit="applyInfo.$valid && $root.apply()">
-    <div class="text_box section">
-        <div class="text_section">
-            <span>姓名：</span>
-            <input type="text" name="UName" ng-model="request.UName" required />
-        </div>
-        <div class="text_section">
-            <span>連絡電話：</span>
-            <input type="text" name="UPhone" ng-model="request.UPhone" required />
-        </div>
-        <div class="text_section">
-            <span>地址：</span>
-            <input type="text" name="UAddress" ng-model="request.UAddress" required />
-        </div>
-        <div class="text_section">
-            <span>E-mail：</span>
-            <input type="email" name="UEmail" ng-model="request.UEmail" required />
-        </div>
-        <div class="text_section">
-            <span>發票號碼：</span>
-            <div ng-messages="applyInfo.UInvoice.$error" style="display:inline; color:crimson;">
-                <span ng-message="pattern">請輸入正確發票格式</span>
-            </div>
-            <input type="text" name="UInvoice" ng-model="request.UInvoice" ng-pattern="'^[a-zA-Z]{2}[0-9]{8}$'" maxlength="10" placeholder="英文2碼+數字8碼" required />
-        </div>
-        <div class="text_section">
-            <span>CPU序號(套裝機不用) ：</span>
-            <input type="text" name="UCPUSN" ng-model="request.UCPUSN" placeholder="SN後面13碼" />
-        </div>
-        <div class="text_section">
-            <span>CPU型號：</span>
-            <a data-fancybox="cpu" href="~/images/cpu_example.jpg">點擊看範例</a>
-            <select name="UCPUType" ng-model="request.UCPUType">
-                <option value="">選擇型號</option>
-                <option>Ryzen5-3400G</option>
-                <option>Ryzen5-3600</option>
-                <option>Ryzen5-3600X</option>
-                <option>Ryzen7-3700X</option>
-                <option>Ryzen7-3800X</option>
-                <option>Ryzen9-3900X</option>
-                <option>Ryzen9-3950X</option>
-            </select>
-        </div>
-        <div class="text_section">
-            <span>購買店家：</span>
-            <input type="text" name="UBuyStore" ng-model="request.UBuyStore" />
-        </div>
-        <div class="text_section">
-            <span>CPU盒裝照片上傳：</span>
-            <a data-fancybox="cpu" href="~/images/cpu_example.jpg" title="範例" target="_blank">點擊看範例</a>
-            <label class="btn" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
-                {{ request.CPUFile.name }}<span ng-show="request.CPUFile === undefined">上傳照片</span>
-                <input name="UCPUPhoto" ng-model="request.CPUFile" type="file" class="hidden" accept="image/*" />
-            </label>
-        </div>
-        <div class="text_section">
-            <span>發票照片上傳：</span>
-            <a data-fancybox="invoice" href="~/images/invoice_example.jpg" title="範例" target="_blank">點擊看範例</a>
-            <label class="btn" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">
-                {{ request.InvoiceFile.name }}<span ng-show="request.InvoiceFile === undefined">上傳照片</span>
-                <input name="UInvoicePhoto" ng-model="request.InvoiceFile" type="file" class="hidden" accept="image/*" />
-            </label>
-        </div>
-        <div class="check_section">
-            <input id="agree" type="checkbox" ng-model="request.agree" required />
-            <label for="agree">我同意以上內容送出</label>
-        </div>
-    </div>
-    <div class="btn_box">
-        <button class="btn">送出</button>
-    </div>
-</form>
 
 <div class="article_title">
     <span class="symbol"></span>
